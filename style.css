@@ -1,0 +1,139 @@
+:root {
+    --clr-neutral-700: hsl(0, 0%, 59%);
+
+    --clr-primary-200: hsl(227, 10%, 46%);
+    --clr-primary-400: hsl(185, 75%, 39%);
+    --clr-primary-600: hsl(229, 23%, 23%);
+
+    --ff-defualt: "Kumbh Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    font: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* general styling */
+
+body {
+    position: relative;
+
+    font-family: var(--ff-defualt);
+    line-height: 1.6;
+
+    color: var(--clr-neutral-700);
+    background-color: var(--clr-primary-400);
+
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+/* body background images */
+
+.card-bg::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+
+    background-image: url(images/bg-pattern-top.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.card-bg::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+
+    background-image: url(images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+/* profile styling */
+
+.profile-card {
+    margin-inline: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 1rem 1rem 0 hsl(227, 10%, 46%, 0.3);
+}
+
+.profile-info {
+    position: relative;
+    display: grid;
+    place-content: center;
+    padding: 5rem 0 1.5rem;
+    text-align: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid hsl(0, 0%, 59%, 0.4);
+}
+
+.profile-name,
+.profile-age {
+    font-size: 1.125rem;
+}
+
+.profile-name {
+    color: var(--clr-primary-600);
+    font-weight: 700;
+}
+
+.profile-image {
+    position: absolute;
+    inset: 0;
+    top: -100%;
+    margin: auto;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+/* stats */
+
+.stats {
+    --gap: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--clr-primary-600);
+    padding: 1.5rem 2rem;
+
+    justify-content: center;
+}
+
+.stats span {
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    color: var(--clr-neutral-700);
+
+    display: block;
+}
+
+/* utility classes */
+
+.flex-group {
+    display: flex;
+    gap: var(--gap, 1rem);
+    flex-wrap: wrap;
+}
